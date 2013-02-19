@@ -1,0 +1,307 @@
+﻿//---------------------------------------------------
+//    LESS Elements 0.6
+//  ---------------------------------------------------
+//    A set of useful LESS mixins by Dmitry Fadeyev
+//    Special thanks for mixin suggestions to:
+//      Kris Van Herzeele,
+//      Benoit Adam,
+//      Portenart Emile-Victor,
+//      Ryan Faerman
+//
+//    More info at: http://lesselements.com
+//-----------------------------------------------------
+
+// General
+.font-face (@fontName, @fontFile) {
+    font-family: "@{fontName}";
+    src: url("fonts/@{fontFile}.eot");
+    src: local('☺'),
+			url("fonts/@{fontFile}.woff") format("woff"),
+			url("fonts/@{fontFile}.ttf") format("truetype"), 
+			url("fonts/@{fontFile}.svg#komika_textregular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.bg(@filename, @repeat:no-repeat, @x:left, @y:top, @color:transparent) {
+	background: e(%('url(../Images/%s)', @filename)) @repeat @x @y @color;
+}
+
+.bgImportant(@filename, @repeat:no-repeat, @x:left, @y:top, @color:transparent) {
+	background: e(%('url(../Images/%s)', @filename)) @repeat @x @y @color !important;
+}
+
+// CSS3
+.gradient(@color: #F5F5F5, @start: #EEE, @stop: #FFF) {
+	background: @color;
+	background: -webkit-linear-gradient(linear,
+								left bottom,
+								left top,
+								color-stop(0%, @start),
+								color-stop(100%, @stop)) !important;
+	background: -webkit-gradient(linear,
+								left bottom,
+								left top,
+								color-stop(0%, @start),
+								color-stop(100%, @stop)) !important;
+	background: -ms-linear-gradient(bottom,
+									@start,
+									@stop) !important;
+	background: -moz-linear-gradient(center bottom,
+									@start 0%,
+									@stop 100%) !important;
+	-pie-background: linear-gradient(center bottom,
+									@start 0%,
+									@stop 100%) !important;
+
+}
+.gradient-pourcent-inverse(@color: #F5F5F5, @start: #EEE, @stop: #FFF, @begin, @break, @end) {
+	background: @color;
+	background: -webkit-linear-gradient(top,
+									@start @begin,
+									@stop @break,
+									@stop @end);
+	background: -webkit-gradient(linear,
+								left bottom,
+								left top,
+								color-stop(@begin, @start),
+								color-stop(@break, @start),
+								color-stop(@end, @stop));
+	background: -ms-linear-gradient(top,
+									@start @begin,
+									@stop @break,
+									@stop @end);
+	background: -moz-linear-gradient(top,
+									@start @begin,
+									@stop @break,
+									@stop @end);
+	-pie-background: linear-gradient(top,
+									@start @begin,
+									@stop @break,
+									@stop @end);
+
+}
+.gradient-pourcentWithSpace(@color: #F5F5F5, @start1: #EEE, @start2: #EEE, @stop: #FFF, @begin, @break1, @break2, @end) {
+	background: @color;
+	background: -webkit-linear-gradient(top,
+									@start1 @begin,
+									@start1 @break1,
+									@start2 @break2,
+									@stop @end);
+	background: -webkit-gradient(linear,
+								left top,
+								left bottom,
+								color-stop(@begin, @start1),
+								color-stop(@break1, @start1),
+								color-stop(@break2, @start2),
+								color-stop(@end, @stop));
+	background: -ms-linear-gradient(top,
+									@start1 @begin,
+									@start1 @break1,
+									@start2 @break2,
+									@stop @end);
+	background: -moz-linear-gradient(top,
+									@start1 @begin,
+									@start1 @break1,
+									@start2 @break2,
+									@stop @end);
+	-pie-background: linear-gradient(top,
+									@start1 @begin,
+									@start1 @break1,
+									@start2 @break2,
+									@stop @end);
+
+}
+.gradient-pourcent(@color: #F5F5F5, @start: #EEE, @stop: #FFF, @begin, @break, @end) {
+	background: @color;
+	background: -webkit-linear-gradient(top,
+									@start @begin,
+									@start @break,
+									@stop @end);
+	background: -webkit-gradient(linear,
+								left top,
+								left bottom,
+								color-stop(@begin, @start),
+								color-stop(@break, @start),
+								color-stop(@end, @stop));
+	background: -ms-linear-gradient(top,
+									@start @begin,
+									@start @break,
+									@stop @end);
+	background: -moz-linear-gradient(top,
+									@start @begin,
+									@start @break,
+									@stop @end);
+	-pie-background: linear-gradient(top,
+									@start @begin,
+									@start @break,
+									@stop @end);
+
+}
+
+.gradient-pourcent-wizard(@color: #F5F5F5, @start: #EEE, @stop: #FFF, @begin, @break, @break2, @end) {
+	background: @color;
+	background: -webkit-linear-gradient(top,
+									@start @begin,
+									@start @break,
+									@stop @break,
+									@stop @end);
+	background: -webkit-gradient(linear,
+								left top,
+								left bottom,
+								color-stop(@begin, @start),
+								color-stop(@break, @start),
+								color-stop(@break2, @stop),
+								color-stop(@end, @stop));
+	background: -ms-linear-gradient(top,
+									@start @begin,
+									@start @break,
+									@stop @break2,
+									@stop @end);
+	background: -moz-linear-gradient(top,
+									@start @begin,
+									@start @break,
+									@stop @break2,
+									@stop @end);
+	-pie-background: linear-gradient(top,
+									@start @begin,
+									@start @break,
+									@stop @break2,
+									@stop @end);
+}
+
+.bw-gradient(@color: #F5F5F5, @start: 0, @stop: 255) {
+  background: @color;
+  background: -webkit-linear-gradient(linear,
+                               left bottom,
+                               left top,
+                               color-stop(0%, rgb(@start,@start,@start)),
+                               color-stop(100%, rgb(@stop,@stop,@stop)));
+	background: -webkit-linear-gradient(linear,
+                               left bottom,
+                               left top,
+                               color-stop(0%, rgb(@start,@start,@start)),
+                               color-stop(100%, rgb(@stop,@stop,@stop)));
+  background: -ms-linear-gradient(bottom,
+                                  rgb(@start,@start,@start) 0%,
+                                  rgb(@start,@start,@start) 100%);
+  background: -moz-linear-gradient(center bottom,
+                                   rgb(@start,@start,@start) 0%,
+                                   rgb(@stop,@stop,@stop) 100%);
+	-pie-background: linear-gradient(center bottom,
+                                   rgb(@start,@start,@start) 0%,
+                                   rgb(@stop,@stop,@stop) 100%);
+}
+.bordered(@top-color: #EEE, @right-color: #EEE, @bottom-color: #EEE, @left-color: #EEE) {
+	border-top: solid 1px @top-color;
+	border-left: solid 1px @left-color;
+	border-right: solid 1px @right-color;
+	border-bottom: solid 1px @bottom-color;
+}
+.drop-shadow(@x-axis: 0, @y-axis: 1px, @blur: 2px, @spread:1px, @alpha: 0.1) {
+  -webkit-box-shadow: @x-axis @y-axis @blur @spread rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: @x-axis @y-axis @blur @spread rgba(0, 0, 0, @alpha);
+  box-shadow: @x-axis @y-axis @blur @spread rgba(0, 0, 0, @alpha);
+  behavior: url(/Scripts/css3pie/PIE.htc);
+}
+.inner-shadow (@x: 0, @y: 1px, @blur: 2px, @spread: 0, @alpha: 0.25) {
+	-webkit-box-shadow: inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+	-moz-box-shadow:    inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+	box-shadow:         inset @x @y @blur @spread rgba(0, 0, 0, @alpha);
+}
+.text-shadow(@x-axis: 0px, @y-axis: 1px, @blur: 2px, @color: #000) {
+  -webkit-text-shadow: @x-axis @y-axis @blur @color;
+  -moz-text-shadow: @x-axis @y-axis @blur @color;
+  text-shadow: @x-axis @y-axis @blur @color;
+}
+.rounded(@radius: 2px) { 
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+	-moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; 
+}
+.border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+  -webkit-border-top-right-radius: @topright;
+  -webkit-border-bottom-right-radius: @bottomright;
+  -webkit-border-bottom-left-radius: @bottomleft;
+  -webkit-border-top-left-radius: @topleft;
+  -moz-border-radius-topright: @topright;
+  -moz-border-radius-bottomright: @bottomright;
+  -moz-border-radius-bottomleft: @bottomleft;
+  -moz-border-radius-topleft: @topleft;
+  border-top-right-radius: @topright;
+  border-bottom-right-radius: @bottomright;
+  border-bottom-left-radius: @bottomleft;
+  border-top-left-radius: @topleft;
+  -moz-background-clip: padding; -webkit-background-clip: padding-box; background-clip: padding-box; 
+}
+.opacity(@opacity: 0.5) {
+  -moz-opacity: @opacity;
+  -khtml-opacity: @opacity;
+  -webkit-opacity: @opacity;
+  opacity: @opacity;
+}
+.transition-duration(@duration: 0.2s) {
+  -moz-transition-duration: @duration;
+  -webkit-transition-duration: @duration;
+  transition-duration: @duration;
+}
+.rotation(@deg:5deg){
+  -webkit-transform: rotate(@deg);
+  -moz-transform: rotate(@deg);
+  transform: rotate(@deg);
+}
+.scale(@ratio:1.5){
+  -webkit-transform:scale(@ratio);
+  -moz-transform:scale(@ratio);
+  transform:scale(@ratio);
+}
+.transition(@duration:0.2s, @ease:ease-out) {
+  -webkit-transition: all @duration @ease;
+  -moz-transition: all @duration @ease;
+  transition: all @duration @ease;
+}
+.inner-shadow(@horizontal:0, @vertical:1px, @blur:2px, @alpha: 0.4) {
+  -webkit-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+  -moz-box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+  box-shadow: inset @horizontal @vertical @blur rgba(0, 0, 0, @alpha);
+}
+.box-shadow(@arguments) {
+  -webkit-box-shadow: @arguments;
+  -moz-box-shadow: @arguments; 
+  box-shadow: @arguments;
+}
+.columns(@colwidth: 250px, @colcount: 0, @colgap: 50px, @columnRuleColor: #EEE, @columnRuleStyle: solid, @columnRuleWidth: 1px) {
+  -moz-column-width: @colwidth;
+  -moz-column-count: @colcount;
+  -moz-column-gap: @colgap;
+  -moz-column-rule-color: @columnRuleColor;
+  -moz-column-rule-style: @columnRuleStyle;
+  -moz-column-rule-width: @columnRuleWidth;
+  -webkit-column-width: @colwidth;
+  -webkit-column-count: @colcount;
+  -webkit-column-gap: @colgap;
+  -webkit-column-rule-color: @columnRuleColor;
+  -webkit-column-rule-style: @columnRuleStyle;
+  -webkit-column-rule-width: @columnRuleWidth;
+  column-width: @colwidth;
+  column-count: @colcount;
+  column-gap: @colgap; 
+  column-rule-color: @columnRuleColor;
+  column-rule-style: @columnRuleStyle;
+  column-rule-width: @columnRuleWidth;
+}
+.translate(@x:0, @y:0) {
+  -moz-transform: translate(@x, @y);
+  -webkit-transform: translate(@x, @y);
+  -o-transform: translate(@x, @y);
+  -ms-transform: translate(@x, @y);
+  transform: translate(@x, @y);
+}
+
+.at2x(@path, @w: auto, @h: auto){
+	@media all and (-webkit-min-device-pixel-ratio : 1.5) {
+		background-size: @w @h;
+		background-image:e(%('url(../Images/%s)', @path));
+	}
+}
