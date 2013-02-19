@@ -276,8 +276,8 @@ header {
 		behavior:@behaviorSRC;
 		
 		.content {
-			width:917px;
-			padding:39px 43px 39px 15px;
+			width:947px;
+			padding:39px 13px 39px 15px;
 			.rounded(9px);
 			border:1px solid #8b8a88;
 			background:#f4f0ed;
@@ -349,6 +349,8 @@ header {
  
 .sections{
 	clear:both;
+	overflow:hidden;
+	padding-top:38px;
 	.box{
 		.gradient(#e0ddda, #c7c2be, #faf9f7);
 		text-transform:uppercase;
@@ -389,7 +391,8 @@ header {
 			color:#7b746c;
 			font-family:@specialFontFamily;
 			margin:0;
-			font-size:18px;
+			font-size:20px;
+			font-weight:normal;
 			.text-shadow(0px, 1px, 1px, #fff);
 		}
 		a{
@@ -416,12 +419,13 @@ header {
 	height:302px;
 	overflow:visible;
 	.inner{padding-top:10px !important;}
-	h2{margin-bottom:8px !important;}
+	h2{margin-bottom:8px !important;font-family:@fontFamily !important;}
+	ul{overflow:hidden;height:246px;list-style:none;}
 	.rhino-container{
 		margin:0;
 		ul{margin:0;padding:0 !important;}
 		.rhino-prev{
-			top:95px;
+			top:90px;
 			left:-22px;
 			.bg("slider/controls.png", no-repeat, top, left);
 			height:34px;
@@ -432,7 +436,7 @@ header {
 			}
 		}
 		.rhino-next{
-			top:95px;
+			top:90px;
 			right:-22px;
 			.bg("slider/controls.png", no-repeat, top, left);
 			background-position:left -66px;
