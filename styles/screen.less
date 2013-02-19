@@ -130,17 +130,179 @@ header {
 	background:#fff;
 	border-bottom:5px solid #dba962;
 	box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.5); 
+	behavior:@behaviorSRC;
 	
 	.inner-header {
 		width:1100px; /* 1190 */
 		padding:8px 45px;
 		margin:0 auto;
 		
+		.logo {
+			float:left;
+		}
+		
+		.quickmenu {
+			width:25%;
+			float:right;
+			font-size:1.2em;
+			font-weight:bold;
+			color:#dba962;
+			margin-top:33px; 
+			margin-bottom:0;
+			
+			li {
+				float:left;
+				list-style:none;
+				margin-left:10px;
+			}
+		}
 	}
 }
 
 .container {
 	width:1190px;
+	margin:20px auto 0;
+	
+
+	.kidsList-wrapper {
+		width:193px;
+		float:left;
+		
+		.rounded(9px);
+		box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.2); 
+		behavior:@behaviorSRC;
+		
+		.kidsList {
+			width:133px;
+			padding:39px 43px 39px 15px;
+			.rounded(9px);
+			border:1px solid #8b8a88;
+			background:#f4f0ed;
+			
+			box-shadow: inset -3px -3px 9px 0px rgba(0, 0, 0, 0.15); 
+			behavior:@behaviorSRC;
+			
+			.addChild { 
+				font-size:1.2em;
+				line-height:27px;
+				text-decoration:none;
+				color:#5c5c5c;
+				font-weight:bold;
+				
+				.button {
+					display:inline-block;
+					width:27px;
+					height:27px;
+					float:left;
+					margin-right:7px;
+					border:1px solid #ddd;
+					.rounded(6px);
+					
+					.gradient(#ebc881, #dcaa63, #ebc881);
+					behavior:@behaviorSRC;
+					
+					span {
+						display:block;
+						width:16px; height:17px;
+						position:relative;
+						top:5px; left:5px;
+						
+						.bg("bg/plus.png", no-repeat, center, center);
+					}
+				}
+			}
+			
+			ul {
+				padding-left:0;
+				margin-top:20px;
+				
+				li {
+					list-style:none;
+					margin-bottom:20px;
+					
+					a {
+						display:block; 
+						font-size:1.2em;
+						line-height:1.6em;
+						color:#5c5c5c;
+						text-decoration:none;
+						
+						&:hover,
+						&.selected {
+							color:#d3983d;
+							
+							span {
+								.bg("bg/kidHover.png", no-repeat, right, 3px);
+							}
+						}
+						
+						span {
+							display:block;
+							padding-right:35px;
+							font-size:1.8em;
+						}
+					}
+				}
+			}
+			
+			.share {
+				display:block;
+				float:left;
+				margin-right:7px;
+				border:1px solid #ddd;
+				display:block; 
+				font-size:1.2em;
+				line-height:1.6em;
+				color:#fff;
+				text-decoration:none;
+				font-weight:bold;
+				
+				text-shadow: 0px 2px 2px #cda564;
+				.rounded(6px);
+				.gradient(#ebc881, #dcaa63, #ebc881);
+				behavior:@behaviorSRC;
+			}
+		}
+	}
+	
+
+	.content-wrapper {
+		width:977px;
+		float:left;
+		margin-left:20px;
+		
+		.rounded(9px);
+		box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.2); 
+		behavior:@behaviorSRC;
+		
+		.content {
+			width:917px;
+			padding:39px 43px 39px 15px;
+			.rounded(9px);
+			border:1px solid #8b8a88;
+			background:#f4f0ed;
+			
+			box-shadow: inset -3px -3px 9px 0px rgba(0, 0, 0, 0.15); 
+			behavior:@behaviorSRC;
+		}
+	}
+				
+	.bookSheet {
+		border-width:0 1px 1px 1px;
+		border-style:solid;
+		border-color:#8b8a88;
+		background:#d7d7d5;
+		padding-bottom:3px;
+		
+		.rounded(9px);
+		behavior:@behaviorSRC;
+		
+		.bookSheet,
+		.addBook {
+			position:relative;
+			left:-1px;
+		}
+	}
 }
 
  
