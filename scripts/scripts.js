@@ -16,6 +16,7 @@ $(document).ready(function() {
 		showControls: 'always',
 		slidePrevDirection: 'toRight',
 		slideNextDirection: 'toLeft'
+	});
 });
 
 $(window).resize(function() {
