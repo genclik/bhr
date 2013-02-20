@@ -178,16 +178,25 @@
 							</div>
 						</div><!-- /.col1 -->
 					</div><!-- /.sections -->
+					
+					<ul class="mobile-menu">
+						<li><a href="#" class="kidsMenu"><span>Kiddo01</span>11 months 3 weeks</a></li>
+						<li><a href="#" class="summary">Summary</a></li>
+						<li><a href="#" class="list">List</a></li>
+					</ul> <!-- /.mobile-menu -->
+					
 				</div> <!-- /.content addBook -->
 				
 				<div class="anneaux"></div> <!-- /.anneaux -->
 			</div> <!-- /.content-wrapper -->	
-		</div> <!-- /.container -->
-		
-		<footer>
 			
-		</footer>
-
+			<div class="clear"></div>
+		
+			<footer>
+				<p>&copy; 2013 TELUS Health</p>
+				<a href="#" class="connects"><img src="images/btn/connects_en.png" alt="Connects with Telus health space" /></a>
+			</footer>
+		</div> <!-- /.container -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="scripts/vendor/jquery-1.9.0.min.js"><\/script>')</script>
         <!--rhinoslider-->
@@ -196,13 +205,12 @@
 		<script type="text/javascript" src="scripts/rhinoslider/js/easing.js"></script>
 		<script src="scripts/plugins.js"></script>
         <script src="scripts/scripts.js"></script>
+		
+		<script type="text/javascript">
+			if(BrowserDetect.browser != "Explorer"){
+				document.write('<link rel="stylesheet" href="styles/responsive.css">');
+			}
+		</script>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
     </body>
 </html>
