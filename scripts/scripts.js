@@ -6,6 +6,8 @@ $(document).ready(function() {
 	
 	$(".addChild").prepend('<span class="button"><span /></span>');
 	$(".share").wrapInner('<span class="button"><span /></span>');
+	
+	
 
 	/*Rhino Slider*/
 	$('#slider').rhinoslider({
@@ -21,7 +23,7 @@ $(document).ready(function() {
 
 $(window).resize(function() {
 	$(".addBook").each(function(){
-		$(this).wrap('<div class="bookSheet"><div class="bookSheet"></div></div>');
+		//$(this).wrap('<div class="bookSheet"><div class="bookSheet"></div></div>');
 		$(this).parents(".bookSheet").width($(this).outerWidth() -2);
 	});
 });
