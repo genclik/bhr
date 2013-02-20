@@ -290,7 +290,7 @@ header {
 		behavior:@behaviorSRC;
 		
 		.content {
-			width:932px;
+			width:908px;
 			padding:39px 25px 39px 42px;
 			.rounded(9px);
 			border:1px solid #8b8a88;
@@ -331,7 +331,7 @@ header {
  /* Boxes on homepage */
 .growth, .health, .questions{
 	float:left;
-	margin-left:10px;
+	margin-left:12px;
 }
 
 .growth{
@@ -340,7 +340,7 @@ header {
 		border-color:#c5a877;
 		.gradient(#dfc18d, #d8b076, #eed8a8);
 		div.inner{
-			padding:65px 25px;
+			padding:65px 0 0 25px;
 			p{
 				color:#fff;
 				font-size:25px;
@@ -373,14 +373,14 @@ header {
 .sections{
 	clear:both;
 	overflow:hidden;
-	padding-top:38px;
+	padding-top:28px;
 	.box{
 		.gradient(#e0ddda, #c7c2be, #faf9f7);
 		text-transform:uppercase;
 		text-align:center;
 		font-size:12px;
 		div.inner{
-			padding-top:30px;
+			padding:30px 10px;
 			a{
 				text-decoration:none;
 				color:#898178;
@@ -394,10 +394,10 @@ header {
 }
  
 .box{
-	height:145px;
+	height:141px;
 	border:1px solid #dad8d6;
 	margin-right:10px;
-	margin-top:10px;
+	margin-top:15px;
 	float:left;
 	overflow:hidden;
 	background-color:#fff;
@@ -408,7 +408,7 @@ header {
 	}
 	div.inner{
 		.bg("bg/bg-box-noise.png", repeat, left, top);
-		padding:15px 12px;
+		padding:10px 12px;
 		height:100%;
 		h2{
 			color:#7b746c;
@@ -439,13 +439,14 @@ header {
 }
 
 .slider{
-	height:302px;
+	height:299px;
 	width:294px !important;
 	overflow:visible;
 	.inner{padding-top:10px !important;}
 	h2{
 		margin-bottom:8px !important;
 		font-family:@fontFamily !important;
+		font-size:18px !important;
 	}
 	ul{
 		overflow:hidden;
@@ -457,25 +458,22 @@ header {
 	.rhino-container{
 		margin:0;
 		ul{margin:0;padding:0 !important;}
-		.rhino-prev{
+		.rhino-prev,.rhino-next{
 			top:90px;
-			left:-22px;
 			.bg("slider/controls.png", no-repeat, top, left);
 			height:34px;
 			width:34px;
 			padding:0;
+		}
+		.rhino-prev{
+			left:-22px;
 			&:hover{
 				background-position:left -33px;
 			}
 		}
 		.rhino-next{
-			top:90px;
 			right:-22px;
-			.bg("slider/controls.png", no-repeat, top, left);
 			background-position:left -66px;
-			height:34px;
-			width:34px;
-			padding:0;
 			&:hover{
 				background-position:left -99px;
 			}
