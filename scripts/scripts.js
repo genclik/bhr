@@ -6,8 +6,10 @@ $(document).ready(function() {
 	
 	$(".addChild").prepend('<span class="button"><span /></span>');
 	$(".share").wrapInner('<span class="button"><span /></span>');
-	
-	$(".kidsList, .anneaux").outerHeight($(".content-wrapper .content").outerHeight());
+		
+	var position = $(".anneaux").position();
+	$(".kidsList").outerHeight($(".content-wrapper .content").outerHeight());
+	$(".anneaux").outerHeight($(".content-wrapper .content").outerHeight() - position.top);
 
 	/*Rhino Slider*/
 	$('#slider').rhinoslider({
@@ -27,7 +29,9 @@ $(window).resize(function() {
 		$(this).parents(".bookSheet").width($(this).outerWidth() -2);
 	});
 	
-	$(".kidsList, .anneaux").outerHeight($(".content-wrapper .content").outerHeight());
+	var position = $(".anneaux").position();
+	$(".kidsList").outerHeight($(".content-wrapper .content").outerHeight());
+	$(".anneaux").outerHeight($(".content-wrapper .content").outerHeight() - position.top);
 });
 
 // Browser Detection
