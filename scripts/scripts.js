@@ -10,17 +10,24 @@ $(document).ready(function() {
 	var position = $(".anneaux").position();
 	$(".kidsList").outerHeight($(".content-wrapper .content").outerHeight());
 	$(".anneaux").outerHeight($(".content-wrapper .content").outerHeight() - position.top);
+	
+	/*Kids menu*/
+	$(".kidsMenu, .close").click(function() {
+		$('.kidsList-wrapper').toggle();
+	});
+	
+	/*List button*/
+	$(".list").click(function() {
+		$('html, body').animate({
+			scrollTop: $(".sections").offset().top+30
+		}, 1000);
+	});
 
 	/*Rhino Slider*/
-	$('#slider').rhinoslider({
-		controlsMousewheel: false,
-		controlsKeyboard: false,
-		controlsPlayPause: false,
-		showBullets: 'never',
-		showControls: 'always',
-		slidePrevDirection: 'toRight',
-		slideNextDirection: 'toLeft'
-	});
+	$('#slider').responsiveSlides({
+        nav: true,
+        speed: 500
+    });
 });
 
 $(window).resize(function() {

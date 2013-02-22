@@ -165,10 +165,13 @@ header {
 	.kidsList-wrapper {
 		width:193px;
 		float:left;
+		display:block;
 		
 		.rounded(9px);
 		box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.2); 
 		behavior:@behaviorSRC;
+		
+		.close{display:none;}
 		
 		.kidsList {
 			width:133px;
@@ -409,7 +412,7 @@ header {
 	border-radius:10px;
 
 	&:last-child{
-		margin-right:0;
+		margin-right:0 !important;
 	}
 	div.inner{
 		.bg("bg/bg-box-noise.png", repeat, left, top);
@@ -447,7 +450,7 @@ header {
 	height:299px;
 	width:294px !important;
 	overflow:visible;
-	.inner{padding-top:10px !important;background:none !important;}
+	.inner{padding-top:10px !important;background:none !important;position:relative;}
 	h2{
 		margin-bottom:8px !important;
 		font-family:@fontFamily !important;
@@ -460,30 +463,32 @@ header {
 		padding:0 !important;
 		margin:0 !important;
 	}
-	.rhino-container{
-		margin:0;
-		ul{margin:0;padding:0 !important;}
-		.rhino-prev,.rhino-next{
-			top:90px;
-			.bg("slider/controls.png", no-repeat, top, left);
-			height:34px;
-			width:34px;
-			padding:0;
-		}
-		.rhino-prev{
-			left:-22px;
-			&:hover{
-				background-position:left -33px;
-			}
-		}
-		.rhino-next{
-			right:-22px;
-			background-position:left -66px;
-			&:hover{
-				background-position:left -99px;
-			}
+
+	.rslides_nav.prev,.rslides_nav.next{
+		top:132px;
+		.bg("slider/controls.png", no-repeat, top, left);
+		height:34px;
+		width:34px;
+		padding:0;
+		position:absolute;
+		text-indent:-100000px;
+		z-index:1000;
+		outline:none;
+	}
+	.rslides_nav.prev{
+		left:-10px;
+		&:hover{
+			background-position:left -33px;
 		}
 	}
+	.rslides_nav.next{
+		right:-10px;
+		background-position:left -66px;
+		&:hover{
+			background-position:left -99px;
+		}
+	}
+
 }
  
 .col1{
@@ -513,6 +518,8 @@ footer {
 	.connects {
 		float:right;
 		margin-right:9px;
+		width:300px;
+		img{width:100%;}
 	}
 }
 

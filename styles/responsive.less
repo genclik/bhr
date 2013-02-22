@@ -21,6 +21,12 @@
 		
 		.inner-header {
 			width:718px;
+			padding-top:10px;
+			padding-bottom:10px;
+		}
+		
+		.quickmenu{
+			padding-left:0;
 		}
 	}
 	
@@ -32,6 +38,13 @@
 			left:20px;
 			z-index:24;
 			display:none;
+			
+			.close{
+				display:block;
+				position:absolute;
+				top:10px;
+				right:10px;
+			}
 			
 			.kidsList {
 				padding-left:43px;
@@ -207,7 +220,7 @@
 		
 		.inner-header {
 			width:auto;
-			padding-top:21px; padding-bottom:21px;
+			padding-top:10px; padding-bottom:10px;
 			
 			.logo {
 				max-width:60%;
@@ -223,23 +236,92 @@
 	.container {
 		width:auto;
 		max-width:480px;
-		
-		.content-wrapper {
+		.kidsList-wrapper{
+			left:5px;
 			width:auto;
-			max-width:460px;
-			margin-left:10px; margin-right:10px;
-			
-			.content {
-				padding-left:48px;
-				padding-right:27px;
-				width:auto;
-				max-width:380px;
+			.kidsList{
+				padding-left:30px;
 			}
 		}
+		.content-wrapper {
+			/*width:auto;
+			max-width:460px;*/
+			width:97%;
+			margin-left:5px; margin-right:5px;
+			.bookSheet{width:auto !important;border-right:0;border-left:0;}
+			
+			.content {
+				padding-left:25px;
+				padding-right:15px;
+				padding-top: 60px;
+				width:auto;
+				/*max-width:380px;*/
+				.box{
+					width:48%;
+					margin-right:2%;
+					.inner{
+						padding-right:8px;
+						padding-left:8px;
+						h2{
+							font-size:17px;
+						}
+					}
+				}
+				.box.col2{
+					width:100%;
+					margin-right:0;
+				}
+				.growth, .health, .questions, .sections {
+					margin-left:0;
+					width:100% !important;
+				}
+				.sections{
+					width: 332px;
+					.box:nth-child(2n){
+						margin-right:0;
+					}
+				}
+				.mobile-menu li{
+					width:25%;
+					&:first-child{width:50%}
+					a{font-size:11px;font-weight:bold;height:auto;}
+					a.list, a.summary, a.list:hover, a.summary:hover{
+						background-size: 17px 17px;
+						padding: 27px 0 0px;
+						background-position: center 6px;
+						
+					}
+					a.kidsMenu, a.kidsMenu:hover{
+						padding: 7px 0 2px 27px;
+						line-height:1.6em;
+						background-size: 10px 15px;
+						background-position: 7px center;
+					}
+				}
+			}
+			.anneaux{
+				width:60px;
+				background-size:100%;
+				left:-40px;
+			}
+		}
+		
 	}
+	footer{
+		overflow:auto;
+		margin:0 10px 10px 10px;
+		.connects, .connects img{
+			width:100%;
+		}
+	}
+
 	
 	.slider {
-		max-width:346px;
+		&.box, ul{height: auto !important;}
+		img{width:100%;}
+		.rslides_nav.prev,.rslides_nav.next{
+			top:50%;
+		}
 		width:100% !important;
 	}
 }
