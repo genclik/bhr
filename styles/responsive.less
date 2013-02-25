@@ -11,28 +11,19 @@
 @font-face {
 	.font-face("komika", "komtxt__-webfont");
 }
+//----------------- Tablet Horizontal et petits écrans----
 
-// ---------------- Tablet ---
-//----------------------------------------------------------- 
-@media only screen and (max-width: 768px){
-
-	header {
-		width:768px;
-		
-		.inner-header {
-			width:718px;
-			padding-top:10px;
-			padding-bottom:10px;
-		}
-		
-		.quickmenu{
-			padding-left:0;
-		}
+@media only screen and (max-width: 1225px){
+	header .inner-header {
+		margin: 0;
+		width: 970px;
 	}
-	
-	.container {
-		width:768px;
-		
+	footer {
+		margin-left: 12px;
+		width: 994px;
+	}
+	.container{
+		width:auto;
 		.kidsList-wrapper {
 			position:absolute;
 			left:20px;
@@ -51,16 +42,13 @@
 				padding-right:15px;
 			}
 		}
-		
-		.content-wrapper {
-			width:728px;
-			
-			.content {
-				width:647px; /* 660 */
-				padding-top:88px;
-				padding-left:55px;
-				overflow:hidden;
-				
+		.content-wrapper{
+			.anneaux {
+				z-index:25;
+				top:104px;
+			}
+			.content{
+				padding-top:55px;
 				.mobile-menu {
 					display:block;
 					position:absolute;
@@ -70,20 +58,22 @@
 					border-style:solid;
 					border-width:1px 1px 2px 1px;
 					border-color:#f5f1ee #f5f1ee #e1dcd8 #f5f1ee;
+					border-radius:10px 10px 0 0;
 					
 					li {
 						float:left;
 						list-style:none;
-						width:33.33%;
-						
+						width:25%;
+						&:first-child{width:50%}
 						a {
 							text-align:center;
 							display:block;
 							text-decoration:none;
-							font-size:1.7em;
+							font-size:11px;
+							font-weight:bold;
 							line-height:1em;
 							text-transform:uppercase;
-							height:49px;
+							height:auto;
 							padding:17px 0 14px;
 							
 							&:hover {
@@ -143,10 +133,76 @@
 									.bg("bg/list-hover.png", no-repeat, center, 13px, #b4a89a);
 								}
 							}
+						}
+						a.list, a.summary, a.list:hover, a.summary:hover{
+							background-size: 17px 17px;
+							padding: 27px 0 0px;
+							background-position: center 6px;
 							
+						}
+						a.kidsMenu, a.kidsMenu:hover{
+							padding: 7px 0 2px 27px;
+							line-height:1.6em;
+							background-size: 10px 15px;
+							background-position: 7px center;
 						}
 					}
 				}
+			}
+		}
+	}
+}
+
+// ---------------- Tablet vertical ---
+//----------------------------------------------------------- 
+@media only screen and (max-width: 768px){
+
+	header {
+		width:768px;
+		
+		.inner-header {
+			width:718px;
+			padding-top:10px;
+			padding-bottom:10px;
+		}
+		
+		.quickmenu{
+			padding-left:0;
+		}
+	}
+	footer{
+		width:auto;
+	}
+	
+	.container {
+		width:768px;
+		
+		.kidsList-wrapper {
+			position:absolute;
+			left:20px;
+			z-index:24;
+			display:none;
+			
+			.close{
+				display:block;
+				position:absolute;
+				top:10px;
+				right:10px;
+			}
+			
+			.kidsList {
+				padding-left:43px;
+				padding-right:15px;
+			}
+		}
+		
+		.content-wrapper {
+			width:728px;
+			
+			.content {
+				width:647px; /* 660 */
+				padding-left:55px;
+				overflow:hidden;
 			}
 			
 			.anneaux {
@@ -309,6 +365,7 @@
 	}
 	footer{
 		overflow:auto;
+		width:95%;
 		margin:0 10px 10px 10px;
 		.connects, .connects img{
 			width:100%;
@@ -324,4 +381,11 @@
 		}
 		width:100% !important;
 	}
+}
+
+/* adapter pour 480, landscape */
+@media only screen and (max-width: 340px){
+	.container .content-wrapper .content .box{
+		height:155px;
+	}			
 }

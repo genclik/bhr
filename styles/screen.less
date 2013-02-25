@@ -9,7 +9,7 @@
 /* ==========================================================================
    Base styles: opinionated defaults
    ========================================================================== */
-
+html{-webkit-text-size-adjust: none; /* Prevent font scaling in landscape */}
 html,
 button,
 input,
@@ -359,7 +359,7 @@ header {
 		.graphic{
 			position:absolute;
 			left:-5px;
-			top:-1px;
+			bottom:-1px;
 		}
 	}
 }
@@ -472,7 +472,7 @@ header {
 		padding:0;
 		position:absolute;
 		text-indent:-100000px;
-		z-index:1000;
+		z-index:2;
 		outline:none;
 	}
 	.rslides_nav.prev{

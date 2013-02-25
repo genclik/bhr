@@ -272,8 +272,8 @@ BrowserDetect.init();
 	
 		var sharedOptions = {
 			title: 'Growth Chart - Length',
-			width: 146,
-			height:143,
+			width: 200,
+			height:155,
 			curveType: 'function',
 			legend: 'none',
 			interpolateNulls: true,
@@ -297,7 +297,7 @@ BrowserDetect.init();
 				maxValue: 40, 
 				minValue: 15,
 				viewWindow:{
-					max:LastHaxisLength+4, 
+					max:LastHaxisLength+7, 
 					min:LastHaxisLength-7}
 				},
 			vAxis: {
@@ -307,7 +307,7 @@ BrowserDetect.init();
 				maxValue: 40, 
 				minValue: 15,
 				viewWindow:{
-					max:LastVaxisLength+3, 
+					max:LastVaxisLength+4, 
 					min:LastVaxisLength-7}
 				}
 		}
@@ -320,7 +320,7 @@ BrowserDetect.init();
 				maxValue: 40, 
 				minValue: 15,
 				viewWindow:{
-					max:LastHaxisWeight+4, 
+					max:LastHaxisWeight+7, 
 					min:LastHaxisWeight-7}
 				},
 			vAxis: {
@@ -330,7 +330,7 @@ BrowserDetect.init();
 				maxValue: 40, 
 				minValue: 15,
 				viewWindow:{
-					max:LastVaxisWeight+3, 
+					max:LastVaxisWeight+4, 
 					min:LastVaxisWeight-7}
 				}
 		}
