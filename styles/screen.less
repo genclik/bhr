@@ -99,7 +99,7 @@ textarea {
 @import "mixins.less";
 
 // Behavior 
-@behaviorSRC: url(scripts/css3pie/PIE.HTC);
+@behaviorSRC: url(scripts/css3pie/pie.HTC);
 
 @fontFamily: Helvetica, Verdana, Tahoma, Sans-serif;
 @specialFontFamily:"komika", Helvetica, Verdana, Tahoma, Sans-serif;
@@ -201,6 +201,7 @@ header {
 					
 					.gradient(#ebc881, #dcaa63, #ebc881);
 					behavior:@behaviorSRC;
+					position:relative;
 					
 					span {
 						display:block;
@@ -299,6 +300,7 @@ header {
 			background:#f4f0ed;
 			
 			box-shadow: inset -3px -3px 9px 0px rgba(0, 0, 0, 0.15); 
+			position:relative;
 			behavior:@behaviorSRC;
 			
 			.mobile-menu { display:none; }
@@ -322,7 +324,7 @@ header {
 		padding-bottom:3px;
 		
 		.rounded(9px);
-		/* behavior:@behaviorSRC; */
+		//behavior:@behaviorSRC;
 		
 		.bookSheet,
 		.addBook {
@@ -411,6 +413,9 @@ header {
 	overflow:hidden;
 	background-color:#fff;
 	border-radius:10px;
+	  /*behavior:@behaviorSRC;
+	  Can't have round corners on IE8 and IE7 cause of the charts*/
+	position:relative;
 
 	&:last-child{
 		margin-right:0 !important;
@@ -634,3 +639,22 @@ footer {
 	width: 0;
 	height: 0;
 }
+
+/*IE 8 and older*/
+.lt-ie9{
+	.col2{width:295px;}
+	.col1{width:140px;}
+	.last{margin-right:0;}
+	.content-wrapper, .kidsList-wrapper{
+		box-shadow: 0px 1px 3px 1px #ccc; 
+	}
+	iframe{			
+		position:relative;
+		bottom:-10px;
+	}
+	header{
+		box-shadow: -4px 2px 3px 1px #ccc; 
+	}
+}
+
+

@@ -17,7 +17,7 @@
 		<link type="text/css" rel="stylesheet" href="scripts/responsiveSlides/responsiveslides.css" />
 		
 		<!-- css3pie -->
-		
+		<!--[if lt IE 9]> <script src="scripts/css3pie/pie.js"></script><![endif]-->
 		
         <script src="scripts/modernizr-2.6.2.min.js"></script>
     </head>
@@ -44,12 +44,16 @@
 		
 			<div class="kidsList-wrapper">
 				<div class="kidsList addBook">
-					<a href="#" class="addChild">Add Other Child</a>
+					<a href="#" class="addChild">
+					<span class="button"><span></span></span>
+					Add Other Child</a>
 					<ul>
 						<li><a href="#"><span>Kiddo01</span>11 months 3 weeks</a></li>
 						<li><a href="#"><span>Kiddo02</span>1 year 3 months</a></li>
 					</ul>
-					<a href="#" class="share">Share Info</a>
+					<a href="#" class="share">
+						<span class="button"><span>Share Info</span></span>
+					</a>
 					<a href="#" class="close">Close</a>
 				</div> <!-- /.kidsList -->
 			</div> <!-- /.kidsList-wrapper -->
@@ -120,7 +124,7 @@
 								<a href="#">Read more</a>
 							</div><!-- /.inner -->
 						</div><!-- /.col1 -->
-						<div class="col1 box">
+						<div class="col1 box last">
 							<div class="inner">
 								<h2>How to...</h2>
 								<ul>
@@ -172,7 +176,7 @@
 								</a>
 							</div><!-- /.inner -->
 						</div><!-- /.col1 -->
-						<div class="col1 box">
+						<div class="col1 box last">
 							<div class="inner">
 								<a href="">
 									<img src="images/icons/donation.png"/><br/>

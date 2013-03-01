@@ -1,15 +1,18 @@
 $(document).ready(function() {
-	$(".addBook").each(function(){
-		$(this).wrap('<div class="bookSheet"><div class="bookSheet"></div></div>');
-		$(this).parents(".bookSheet").width($(this).outerWidth() -2);
-	});
-	
-	$(".addChild").prepend('<span class="button"><span /></span>');
-	$(".share").wrapInner('<span class="button"><span /></span>');
-		
+
 	var position = $(".anneaux").position();
 	$(".kidsList").outerHeight($(".content-wrapper .content").outerHeight());
 	$(".anneaux").outerHeight($(".content-wrapper .content").outerHeight() - position.top);
+	
+	$(".addBook").each(function(){
+		$(this).wrap('<div class="bookSheet"><div class="bookSheet"></div></div>');
+		$(this).parents(".bookSheet").width($(this).outerWidth() -2);
+		if (window.PIE) {
+			$('.bookSheet').each(function() {
+				PIE.attach(this);
+			});
+		}
+	});
 	
 	/*Kids menu*/
 	$(".kidsMenu, .close").click(function() {
@@ -31,14 +34,16 @@ $(document).ready(function() {
 });
 
 $(window).resize(function() {
-	$(".addBook").each(function(){
-		//$(this).wrap('<div class="bookSheet"><div class="bookSheet"></div></div>');
-		$(this).parents(".bookSheet").width($(this).outerWidth() -2);
-	});
-	
-	var position = $(".anneaux").position();
-	$(".kidsList").outerHeight($(".content-wrapper .content").outerHeight());
-	$(".anneaux").outerHeight($(".content-wrapper .content").outerHeight() - position.top);
+	if (!window.PIE) {
+		$(".addBook").each(function(){
+			//$(this).wrap('<div class="bookSheet"><div class="bookSheet"></div></div>');
+			$(this).parents(".bookSheet").width($(this).outerWidth() -2);
+		});
+		
+		var position = $(".anneaux").position();
+		$(".kidsList").outerHeight($(".content-wrapper .content").outerHeight());
+		$(".anneaux").outerHeight($(".content-wrapper .content").outerHeight() - position.top);
+	}
 });
 
 // Browser Detection
@@ -288,6 +293,9 @@ BrowserDetect.init();
 				{color: 'c1c1c1', lineWidth: 3, enableInteractivity: true, pointSize: 6},
 			]
 		};
+		if (window.PIE) {
+			sharedOptions.backgroundColor = '#dcc292';
+		}
 		
 		var LengthOptions = {
 			hAxis: {
