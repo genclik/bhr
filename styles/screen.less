@@ -99,7 +99,7 @@ textarea {
 @import "mixins.less";
 
 // Behavior 
-@behaviorSRC: url(/scripts/css3pie/PIE.HTC);
+@behaviorSRC: url(scripts/css3pie/PIE.HTC);
 
 @fontFamily: Helvetica, Verdana, Tahoma, Sans-serif;
 @specialFontFamily:"komika", Helvetica, Verdana, Tahoma, Sans-serif;
@@ -261,6 +261,7 @@ header {
 				.rounded(6px);
 				.gradient(#ebc881, #dcaa63, #ebc881);
 				behavior:@behaviorSRC;
+				position:relative;
 				
 				.button {
 					display:block;
@@ -321,7 +322,7 @@ header {
 		padding-bottom:3px;
 		
 		.rounded(9px);
-		behavior:@behaviorSRC;
+		/* behavior:@behaviorSRC; */
 		
 		.bookSheet,
 		.addBook {
