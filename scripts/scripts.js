@@ -16,7 +16,7 @@ $(document).ready(function() {
 	
 	/*Kids menu*/
 	$(".kidsMenu, .close").click(function() {
-		$('.kidsList-wrapper').toggle();
+		$('.kidsList-wrapper').toggleClass('mobile-hidden');
 	});
 	
 	/*List button*/
@@ -277,7 +277,7 @@ BrowserDetect.init();
 	
 		var sharedOptions = {
 			title: 'Growth Chart - Length',
-			width: 200,
+			width: 220,
 			height:155,
 			curveType: 'function',
 			legend: 'none',
@@ -305,7 +305,7 @@ BrowserDetect.init();
 				maxValue: 40, 
 				minValue: 15,
 				viewWindow:{
-					max:LastHaxisLength+7, 
+					max:LastHaxisLength+9, 
 					min:LastHaxisLength-7}
 				},
 			vAxis: {
@@ -328,7 +328,7 @@ BrowserDetect.init();
 				maxValue: 40, 
 				minValue: 15,
 				viewWindow:{
-					max:LastHaxisWeight+7, 
+					max:LastHaxisWeight+9, 
 					min:LastHaxisWeight-7}
 				},
 			vAxis: {

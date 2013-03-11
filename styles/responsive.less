@@ -28,7 +28,9 @@
 			position:absolute;
 			left:20px;
 			z-index:24;
-			display:none;
+			&.mobile-hidden{
+				display:none;
+			}
 			
 			.close{
 				display:block;
@@ -76,11 +78,7 @@
 							height:auto;
 							padding:17px 0 14px;
 							
-							&:hover {
-								background:#b4a89a;
-								color:#fff;
-								text-shadow: 1px 2px 1px #9c9285;
-							}
+							
 							
 							&.kidsMenu {
 								text-transform:none;
@@ -116,10 +114,7 @@
 								
 								.bg("bg/summary.png", no-repeat, center, 13px);
 								
-								&:hover,
-								&:active {
-									.bg("bg/summary-hover.png", no-repeat, center, 13px, #b4a89a);
-								}
+								
 							}
 							&.list {
 								border-left:1px solid #dfdad7;
@@ -128,17 +123,12 @@
 								
 								.border-radius(9px, 0, 0, 0);
 								behavior:@behaviorSRC;
-								&:hover,
-								&:active {
-									.bg("bg/list-hover.png", no-repeat, center, 13px, #b4a89a);
-								}
 							}
 						}
 						a.list, a.summary, a.list:hover, a.summary:hover{
 							background-size: 17px 17px;
 							padding: 27px 0 0px;
 							background-position: center 6px;
-							
 						}
 						a.kidsMenu, a.kidsMenu:hover{
 							padding: 7px 0 2px 27px;
@@ -181,7 +171,6 @@
 			position:absolute;
 			left:20px;
 			z-index:24;
-			display:none;
 			
 			.close{
 				display:block;
@@ -316,8 +305,8 @@
 					width:48%;
 					margin-right:2%;
 					.inner{
-						padding-right:8px;
-						padding-left:8px;
+						padding-right:20px;
+						padding-left:20px;
 						h2{
 							font-size:17px;
 						}
@@ -387,5 +376,34 @@
 @media only screen and (max-width: 340px){
 	.container .content-wrapper .content .box{
 		height:155px;
-	}			
+	}
+	.container .content-wrapper .content .box .inner{
+		padding-right:8px;
+		padding-left:8px;
+	}	
+}
+
+/*Hovers that act weird on touch devices*/
+html.no-touch {
+	.container .content-wrapper .content .mobile-menu li a.list{
+		&:hover,
+		&:active {
+			.bg("bg/list-hover.png", no-repeat, center, 13px, #b4a89a);
+			background-size: 17px 17px;
+			background-position: center 6px;
+		}
+	}
+	.container .content-wrapper .content .mobile-menu li a.summary{
+		&:hover,
+		&:active {
+			.bg("bg/summary-hover.png", no-repeat, center, 13px, #b4a89a);
+			background-size: 17px 17px;
+			background-position: center 6px;
+		}
+	}
+    .container .content-wrapper .content .mobile-menu li a:hover {
+		background:#b4a89a;
+		color:#fff;
+		text-shadow: 1px 2px 1px #9c9285;
+	}
 }
